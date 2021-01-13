@@ -55,7 +55,7 @@ typedef struct {
     int           off;  // 请求偏移
     int           size; // 请求大小
     ev_cb_t       callback;
-	void         *arg;
+    void         *arg;
 } aio_event_t;
 
 pthread_mutex_t g_mutex;
@@ -168,8 +168,8 @@ parse_cmd(int argc, char *argv[])
             }
             break;
         default:
-			client_usage();
-			return -EINVAL;
+            client_usage();
+            return -EINVAL;
         }
     }
     return 0;
