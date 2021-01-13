@@ -182,7 +182,7 @@ event_base_init(event_base_t* base)
 
     /* aio_load */
     memset(&base->ctx, 0, sizeof(base->ctx));
-    io_setup(8192, &base->ctx);
+    assert(io_setup(1024, &base->ctx) == 0);  // 成功, return 0
 
     /* io_open */
     base->fd = open(g_param.filename, O_RDWR | O_CREAT | O_DIRECT, 0644);
